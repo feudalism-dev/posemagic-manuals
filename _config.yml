@@ -1,0 +1,97 @@
+# Site settings
+title: "PoseMagic Manuals"
+description: "Complete documentation for PoseMagic - Break free from animation limits"
+baseurl: ""
+url: "https://feudalism-dev.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      toc: true
+
+# Navigation structure (for sidebar)
+navigation:
+  - title: Getting Started
+    url: /getting-started
+  - title: Examples
+    children:
+      - title: Minimal Chair
+        url: /examples/minimal-chair
+      - title: Two Sitters Couch
+        url: /examples/two-sitters-couch
+      - title: Four Sitters Sofa
+        url: /examples/four-sitters-sofa
+      - title: Expanding to More Sitters
+        url: /examples/expanding-to-more-sitters
+  - title: PMposes Notecard
+    children:
+      - title: Overview
+        url: /pmposes/overview
+      - title: Continuous Flow
+        url: /pmposes/continuous-flow
+      - title: Sitter-Specific
+        url: /pmposes/sitter-specific
+  - title: Scripts
+    children:
+      - title: Overview
+        url: /scripts/overview
+      - title: Primary Scripts
+        url: /scripts/primary
+      - title: Plugins
+        url: /scripts/plugins
+      - title: Utilities
+        url: /scripts/utilities
+  - title: AVsitter Compatibility
+    url: /compatibility/avsitter
+  - title: Tools
+    children:
+      - title: Setup Tool
+        url: /tools/setup-tool
+      - title: Anchors & Visualization
+        url: /tools/anchors-and-visualization
+  - title: Advanced
+    children:
+      - title: Camera
+        url: /advanced/camera
+      - title: RLV
+        url: /advanced/rlv
+      - title: Prop Rezzer
+        url: /advanced/prop-rezzer
+      - title: Remote Control
+        url: /advanced/remote-control
+      - title: Seat Selection
+        url: /advanced/seat-selection
+      - title: Security
+        url: /advanced/security
+      - title: Sequencer
+        url: /advanced/sequencer
+  - title: Reference
+    children:
+      - title: File Structure
+        url: /reference/file-structure
+      - title: Link Messages
+        url: /reference/link-messages
+      - title: Menu & UI
+        url: /reference/menu-and-ui
