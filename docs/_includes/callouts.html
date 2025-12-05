@@ -1,0 +1,14 @@
+{% comment %}
+  Usage: {% include callouts.html type="note" title="Optional Title" content="Your content here" %}
+  Types: note, tip, warning, danger
+{% endcomment %}
+
+<div class="callout callout-{{ include.type }}">
+  <div class="callout-header">
+    <span class="callout-icon">{% case include.type %}{% when 'note' %}ℹ️{% when 'tip' %}💡{% when 'warning' %}⚠️{% when 'danger' %}🚨{% endcase %}</span>
+    <strong class="callout-title">{% if include.title %}{{ include.title }}{% else %}{{ include.type | capitalize }}{% endif %}</strong>
+  </div>
+  <div class="callout-content">
+    {{ include.content | markdownify }}
+  </div>
+</div>
