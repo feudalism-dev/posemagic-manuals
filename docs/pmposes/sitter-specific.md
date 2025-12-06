@@ -1,13 +1,22 @@
 ---
 layout: page
 title: "Sitter-Specific"
-description: "Multiple notecard method"
+description: "Organizing data by sitter"
 ---
 
-**Sitter-Specific** means splitting your data into multiple notecards, e.g., \PMposes\ (for sitter 0) and \PMposes 1\ (for sitter 1).
+**Sitter-Specific** organization allows you to separate configuration files by seat. This is useful for keeping complex data organized.
 
-### Pros
-*   Organized for massive builds.
-*   Less scrolling.
+### Naming Convention
+*   **\PMposes\**: Put common directives and global settings here.
+*   **\PMposes0\**: Data specific to Sitter 0.
+*   **\PMposes1\**: Data specific to Sitter 1.
+*   **\PMposes2\**: Data specific to Sitter 2.
 
-*Note: PoseMagic reads all PMposes* cards and merges them, so you can organize them however you like.*
+### Overflow
+If you need more space for a specific sitter, you can chain them just like continuous flow:
+*   \PMposes0\ -> \PMposes0 1\ -> \PMposes0 2\
+*   \PMposes1\ -> \PMposes1 1\ -> \PMposes1 2\
+
+### Best For
+*   Complex builds with distinct animations per seat.
+*   Teams working on different sitters simultaneously.

@@ -7,7 +7,6 @@ Write-Host "Generating missing pages..." -ForegroundColor Cyan
 # Helper function
 function New-Page ($path, $title, $desc, $content) {
     $dir = Split-Path $path
-    # Only create directory if path has one
     if ($dir) {
         if (-not (Test-Path $dir)) { New-Item -ItemType Directory -Path $dir -Force | Out-Null }
     }
@@ -37,32 +36,40 @@ For example, for Sitter 9, you would use \`! PM - core 9\` and \`! PM - dbc 9\`.
 "@
 
 # --- PMPOSES ---
-New-Page "pmposes/continuous-flow.md" "Continuous Flow" "Single notecard method" @"
-**Continuous Flow** means putting all your poses in one single \`PMposes\` notecard.
+New-Page "pmposes/continuous-flow.md" "Continuous Flow" "Standard sequential notecard method" @"
+**Continuous Flow** is the default way to organize your data. It treats multiple notecards as one single, long stream of data.
 
-### Pros
-*   Easy to see everything at once.
-*   Good for smaller furniture (1-4 sitters).
+### Naming Convention
+*   \`PMposes\` (First card)
+*   \`PMposes 1\` (Second card)
+*   \`PMposes 2\` (Third card)
+*   ...and so on.
 
-### Structure
-\`\`\`
-# Pose: Sit
-sitter 0: ...
-sitter 1: ...
-# Pose: Stand
-sitter 0: ...
-sitter 1: ...
-\`\`\`
+### How it Works
+The system reads \`PMposes\`. When it reaches the end, it automatically looks for \`PMposes 1\` and continues reading as if there was no break.
+
+### Best For
+*   Most furniture projects.
+*   Simply adding more poses when you run out of space in the first card.
 "@
 
-New-Page "pmposes/sitter-specific.md" "Sitter-Specific" "Multiple notecard method" @"
-**Sitter-Specific** means splitting your data into multiple notecards, e.g., \`PMposes\` (for sitter 0) and \`PMposes 1\` (for sitter 1).
+New-Page "pmposes/sitter-specific.md" "Sitter-Specific" "Organizing data by sitter" @"
+**Sitter-Specific** organization allows you to separate configuration files by seat. This is useful for keeping complex data organized.
 
-### Pros
-*   Organized for massive builds.
-*   Less scrolling.
+### Naming Convention
+*   **\`PMposes\`**: Put common directives and global settings here.
+*   **\`PMposes0\`**: Data specific to Sitter 0.
+*   **\`PMposes1\`**: Data specific to Sitter 1.
+*   **\`PMposes2\`**: Data specific to Sitter 2.
 
-*Note: PoseMagic reads all PMposes* cards and merges them, so you can organize them however you like.*
+### Overflow
+If you need more space for a specific sitter, you can chain them just like continuous flow:
+*   \`PMposes0\` -> \`PMposes0 1\` -> \`PMposes0 2\`
+*   \`PMposes1\` -> \`PMposes1 1\` -> \`PMposes1 2\`
+
+### Best For
+*   Complex builds with distinct animations per seat.
+*   Teams working on different sitters simultaneously.
 "@
 
 # --- SCRIPTS ---
@@ -122,7 +129,7 @@ New-Page "contributing.md" "Contributing" "How to help" "Contributions are welco
 Set-Location ..
 Write-Host "`nPushing all new pages to GitHub..." -ForegroundColor Yellow
 git add .
-git commit -m "ADD: Generate all missing documentation pages"
+git commit -m "ADD: Generate all missing documentation pages with correct definitions"
 git push origin main
 
 Write-Host "DONE! All 404s should be fixed." -ForegroundColor Green

@@ -1,21 +1,20 @@
 ---
 layout: page
 title: "Continuous Flow"
-description: "Single notecard method"
+description: "Standard sequential notecard method"
 ---
 
-**Continuous Flow** means putting all your poses in one single \PMposes\ notecard.
+**Continuous Flow** is the default way to organize your data. It treats multiple notecards as one single, long stream of data.
 
-### Pros
-*   Easy to see everything at once.
-*   Good for smaller furniture (1-4 sitters).
+### Naming Convention
+*   \PMposes\ (First card)
+*   \PMposes 1\ (Second card)
+*   \PMposes 2\ (Third card)
+*   ...and so on.
 
-### Structure
-\\\
-# Pose: Sit
-sitter 0: ...
-sitter 1: ...
-# Pose: Stand
-sitter 0: ...
-sitter 1: ...
-\\\
+### How it Works
+The system reads \PMposes\. When it reaches the end, it automatically looks for \PMposes 1\ and continues reading as if there was no break.
+
+### Best For
+*   Most furniture projects.
+*   Simply adding more poses when you run out of space in the first card.
