@@ -1,7 +1,7 @@
 # Site settings
 title: "PoseMagic Manuals"
 description: "Complete documentation for PoseMagic - Break free from animation limits"
-baseurl: ""
+baseurl: "/posemagic-manuals"
 url: "https://feudalism-dev.github.io"
 
 # Build settings
@@ -95,3 +95,4 @@ navigation:
         url: /reference/link-messages
       - title: Menu & UI
         url: /reference/menu-and-ui
+
