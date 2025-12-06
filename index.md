@@ -57,7 +57,7 @@ PoseMagic is a complete rewrite and improvement of AVsitter2, designed to **brea
 
 For a basic working chair, you only need:
 
-1. **`! PM - core`** - The brain of the system (one per linkset)
+1. **`! PM - core`** - The brain of the system (one per sitter)
 2. **`! PM - dbc`** - Database Controller (one per sitter)
 
 That's it! Everything else is optional.

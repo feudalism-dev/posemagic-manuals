@@ -19,7 +19,7 @@ PoseMagic is designed to be simple. For a basic working chair, you only need **t
 
 ### Required Scripts
 
-1. **`! PM - core`** - The main controller (one per linkset)
+1. **`! PM - core`** - The main controller (one per sitter)
 2. **`! PM - dbc`** - Database Controller (one per sitter)
 
 {% include callouts.html type="note" title="Script Naming" content="For multiple sitters, name the DB Controller scripts: `! PM - dbc` (sitter 0), `! PM - dbc 1` (sitter 1), `! PM - dbc 2` (sitter 2), etc." %}
@@ -34,7 +34,7 @@ PoseMagic is designed to be simple. For a basic working chair, you only need **t
 
 ### Step 2: Add Scripts
 
-1. Add **`! PM - core`** to your object
+1. Add **`! PM - core`** to your object (one for Sitter 0)
 2. Add **`! PM - dbc`** to your object (for sitter 0)
 
 {% include callouts.html type="tip" title="Single Sitter" content="For a single-sitter chair, you only need `! PM - core` and `! PM - dbc`. That's it!" %}
